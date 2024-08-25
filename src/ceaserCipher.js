@@ -4,13 +4,14 @@ export default function caesarCipher(string, key) {
 
   let stringArray = string.split("");
 
-  stringArray = stringArray.map((element) => {
+  stringArray.forEach((element, index) => {
     if (element.match(/^[a-z]$/)) {
-      let index = set.indexOf(element);
-      return set[indexCalc(index, key, set.length)];
+      let indexInSet = set.indexOf(element);
+      stringArray[index] = set[indexCalc(indexInSet, key, set.length)];
     } else if (element.match(/^[A-Z]$/)) {
-      let index = set.indexOf(element.toLowerCase());
-      return set[indexCalc(index, key, set.length)].toUpperCase();
+      let indexInSet = set.indexOf(element.toLowerCase());
+      stringArray[index] =
+        set[indexCalc(indexInSet, key, set.length)].toUpperCase();
     } else {
       return element;
     }
