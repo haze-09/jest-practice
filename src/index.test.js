@@ -1,6 +1,7 @@
 import { describe, expect, test } from "@jest/globals";
 import {capitalize, reverseString} from "./strings.js";
 import analyzeArray from "./arrays.js";
+import calc from "./calc.js";
 
 test("is capitalized", () => {
   expect(capitalize("pizza")).toBe("Pizza");
